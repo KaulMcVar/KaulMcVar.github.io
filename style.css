@@ -14,7 +14,7 @@
   --px: 4px;
   --radius: 2px;
   --font-px: "Silkscreen", monospace;
-  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-head: "Poppins", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font: "Inter", system-ui, sans-serif;
 }
@@ -36,7 +36,7 @@ body {
 }
 
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.15; margin: 0; letter-spacing: -.5px; }
+h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.15; margin: 0; letter-spacing: -.3px; }
 
 /* ---------- buttons ---------- */
 .btn {
