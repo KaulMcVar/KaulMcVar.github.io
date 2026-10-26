@@ -5,8 +5,17 @@
   const grid = document.getElementById("projects");
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
+  const all = window.PROJECTS || [];
+  if (!all.length) document.querySelector(".filters").hidden = true;
+
   function render(filter) {
-    const list = (window.PROJECTS || []).filter((p) => filter === "all" || p.type === filter);
+    const list = all.filter((p) => filter === "all" || p.type === filter);
+    if (!list.length) {
+      grid.innerHTML = `<div class="empty"><span class="empty-block" aria-hidden="true"></span>
+        <h3>${all.length ? "Nothing here yet" : "I haven't added any projects yet"}</h3>
+        <p>Projects are coming soon. Check back later!</p></div>`;
+      return;
+    }
     grid.innerHTML = list.map((p) => `
       <article class="card type-${esc(p.type)}">
         <span class="badge">${esc(LABELS[p.type] || p.type)}</span>
@@ -30,9 +39,8 @@
   const lines = [
     ["info", "Starting minecraft server version 1.21.11"],
     ["info", "Loading properties"],
-    ["info", "[DuelsX] Enabling DuelsX v1.0"],
-    ["info", "[KMNpcs] Loaded 12 NPCs"],
-    ["info", "[KMHolograms] Linked 12 holograms to NPCs"],
+    ["info", "[LuckPerms] Enabling LuckPerms"],
+    ["info", "[PlaceholderAPI] Registered 14 expansions"],
     ["info", "[TAB] Enabled in 41ms"],
     ["warn", "[Grim] 0 false flags in the last hour"],
     ["info", "Preparing spawn area: 100%"],
