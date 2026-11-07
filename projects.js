@@ -11,4 +11,11 @@
 //   link: ""
 // },
 window.PROJECTS = [
+  {
+    title: "McModels Catalog",
+    type: "tool",
+    desc: "Website to browse 156 sorted Minecraft model packs: weapons, armor, cosmetics, GUIs and mobs. Search every item, view previews.",
+    tags: ["React 16", "Node.js", "ItemsAdder", "Nexo"],
+    link: "/Models/"
+  }
 ];
